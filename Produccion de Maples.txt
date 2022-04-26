@@ -1,0 +1,43 @@
+formulario orden de produccion
+================================
+Cambios en lo visual
+1. Mostrar deposito por defecto, FC o SIL, dependiendo del usuario logueado al sistema.
+2. Mostrar lista de materiales de cada articulo a producir
+
+
+Usuario: jfvm
+Pass:	 1234
+
+Controles a realizar en base de pruebas
+========================================================================================
+1. Main Orden de Producción
+	- Mostrar filtro de articulos								--> OK
+	- Oculatar linea de produccion								--> OK
+	- Cambiar Mensaje de registros coincidentes (No existen resultados para este filtro)	--> OK
+	- Opcion de Exportacion de grilla a excel						--> OK
+	- No permitir eliminar filas de la grilla con el boton suprimir				--> OK
+2. Orden de Producción
+	- Formulario de busqueda de articulos, adaptar ancho de columnas			--> OK
+	- UpperCase en campo codigo de articulo							--> OK
+	- En campo codigo de articulo, solo consultar articulos de fabrica de maples		--> OK
+	- Validar en campo cantidad solo numeros						--> OK
+3. Recibo de Producción
+	- Campo nro de orden, debe ser de solo lectura						--> OK
+	- Validar recepcion con fecha posterior a la orden					--> OK
+	- Validar cantidad recepcion solo numerico						--> OK
+4. Transferencias
+	- No limpiar formulario si hay error							--> OK
+	- Si no existe codigo de articulo, mantener el foco en el campo codigo de articulo	--> OK
+	- Validar campo cantidad, debe ser solo numerico					--> OK
+	- No permitir cantidad igual a 0							--> OK
+	- Eliminar del combo a personal inexistente						--> OK
+	- Mostrar en busqueda de articulos, solo cartones					--> OK
+	- Adaptar anchos de columnas								--> OK
+5. Mermas
+	- No funciona boton eliminar								--> OK
+	- Validar campo cantidad, debe ser solo numerico, no permitir valor igual a 0		--> OK
+	- Permitir introduccion de codigo de articulo						--> OK
+6. Reportes
+	- Listado de Ordenes por fecha, rango de fecha
+	- Listado de transferencias
+	- Listado de mermas de productos terminados

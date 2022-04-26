@@ -1,0 +1,191 @@
+CONSULTAR CANTIDADES
+/*sql_cantidades = "select tipo_huevo, SUM(cantidad) as cantidad, clasificadora ";
+            sql_cantidades = sql_cantidades + " from lotes ";
+            sql_cantidades = sql_cantidades + " where convert(varchar, fecha, 103) = '" + dtpFecha.Value.ToShortDateString() + "' "; //DateTime.Now.Date.ToShortDateString() + "' ";
+            sql_cantidades = sql_cantidades + " and estado = 'A' and estado_liberacion = 'L' ";
+            sql_cantidades = sql_cantidades + " and tipo_huevo not in ('RP') ";
+            sql_cantidades = sql_cantidades + " group by tipo_huevo, clasificadora ";
+            sql_cantidades = sql_cantidades + " union all ";
+            sql_cantidades = sql_cantidades + " select tipo_huevo, SUM(cantidad) as cantidad, clasificadora ";
+            sql_cantidades = sql_cantidades + " from lotes ";
+            sql_cantidades = sql_cantidades + " where convert(varchar, fecha, 103) = '" + dtpFecha.Value.ToShortDateString() + "' "; //DateTime.Now.Date.ToShortDateString() + "' ";
+            sql_cantidades = sql_cantidades + " and estado = 'A' and SUBSTRING(estado_liberacion, len(estado_liberacion), 1) = 'L' ";
+            sql_cantidades = sql_cantidades + " and tipo_huevo not in ('RP') ";
+            sql_cantidades = sql_cantidades + " and cod_lote in (select distinct cod_lote from lotes_retenidos ";
+            sql_cantidades = sql_cantidades + " where disposicion in (8,9,27) and estado_liberacion = 'L' "; 
+            sql_cantidades = sql_cantidades + " and convert(varchar, fecha, 103) = '" + dtpFecha.Value.ToShortDateString() + "') ";
+            sql_cantidades = sql_cantidades + " group by tipo_huevo, clasificadora ";*/
+
+============================================================================================
+/*sql_totales = "select isnull(SUM(cantidad), 0) as cantidad ";
+            sql_totales = sql_totales + " from lotes ";
+            sql_totales = sql_totales + " where convert(varchar, fecha, 103) = '" + dtpFecha.Value.ToShortDateString() + "' "; 
+            sql_totales = sql_totales + " and estado = 'A' and estado_liberacion = 'L' ";
+            sql_totales = sql_totales + " and tipo_huevo not in ('RP') ";
+            sql_totales = sql_totales + " union all ";
+            sql_totales = sql_totales + " select isnull(SUM(cantidad), 0) as cantidad ";
+            sql_totales = sql_totales + " from lotes ";
+            sql_totales = sql_totales + " where convert(varchar, fecha, 103) = '" + dtpFecha.Value.ToShortDateString() + "' ";
+            sql_totales = sql_totales + " and estado = 'A' and SUBSTRING(estado_liberacion, len(estado_liberacion), 1) = 'L' ";
+            sql_totales = sql_totales + " and tipo_huevo not in ('RP') ";
+            sql_totales = sql_totales + " and cod_lote in (select distinct cod_lote from lotes_retenidos ";
+            sql_totales = sql_totales + " where disposicion in (8,9,27) and estado_liberacion = 'L' ";
+            sql_totales = sql_totales + " and convert(varchar, fecha, 103) = '" + dtpFecha.Value.ToShortDateString() + "') ";*/
+
+============================================================================================
+
+
+============================================================================================
+
+
+============================================================================================
+
+
+
+============================================================================================
+
+
+============================================================================================
+/*if (dr["tipo_huevo"].ToString() == "A")
+                    {
+                        OrdenProduccion.ProductionOrderType = BoProductionOrderTypeEnum.bopotStandard;
+                        OrdenProduccion.ItemNo = "4";
+                        art_code = "4";
+                    }
+                    else if (dr["tipo_huevo"].ToString() == "B")
+                    {
+                        OrdenProduccion.ProductionOrderType = BoProductionOrderTypeEnum.bopotStandard;
+                        OrdenProduccion.ItemNo = "5";
+                        art_code = "5";
+                    }
+                    else if (dr["tipo_huevo"].ToString() == "C")
+                    {
+                        OrdenProduccion.ProductionOrderType = BoProductionOrderTypeEnum.bopotStandard;
+                        OrdenProduccion.ItemNo = "6";
+                        art_code = "6";
+                    }
+                    else if (dr["tipo_huevo"].ToString() == "D")
+                    {
+                        OrdenProduccion.ProductionOrderType = BoProductionOrderTypeEnum.bopotStandard;
+                        OrdenProduccion.ItemNo = "7";
+                        art_code = "7";
+                    }
+                    else if (dr["tipo_huevo"].ToString() == "J")
+                    {
+                        OrdenProduccion.ProductionOrderType = BoProductionOrderTypeEnum.bopotStandard;
+                        OrdenProduccion.ItemNo = "2";
+                        art_code = "2";
+                    }
+                    else if (dr["tipo_huevo"].ToString() == "S")
+                    {
+                        OrdenProduccion.ProductionOrderType = BoProductionOrderTypeEnum.bopotStandard;
+                        OrdenProduccion.ItemNo = "3";
+                        art_code = "3";
+                    }
+                    else if (dr["tipo_huevo"].ToString() == "G")
+                    {
+                        OrdenProduccion.ProductionOrderType = BoProductionOrderTypeEnum.bopotStandard;
+                        OrdenProduccion.ItemNo = "1";
+                        art_code = "1";
+                    }
+                    else if (dr["tipo_huevo"].ToString() == "PI")
+                    {
+                        OrdenProduccion.ProductionOrderType = BoProductionOrderTypeEnum.bopotStandard;
+                        OrdenProduccion.ItemNo = "8";
+                        art_code = "8";
+                    }
+                    else if (dr["tipo_huevo"].ToString() == "R")
+                    {
+                        OrdenProduccion.ProductionOrderType = BoProductionOrderTypeEnum.bopotSpecial;
+                        OrdenProduccion.ItemNo = "9";
+                        art_code = "9";
+                    };*/
+
+
+if (dr["clasificadora"].ToString() == "A")
+                    {
+                        OrdenProduccion.Warehouse = "CCHA";
+                    }
+                    else if (dr["clasificadora"].ToString() == "B")
+                    {
+                        OrdenProduccion.Warehouse = "CCHB";
+                    }
+                    else if (dr["clasificadora"].ToString() == "H")
+                    {
+                        OrdenProduccion.Warehouse = "CCHH";
+                    }
+                    else if ((dr["clasificadora"].ToString() == "O"))
+                    {
+                        OrdenProduccion.Warehouse = "OVO";
+                    }
+                    else if ((dr["clasificadora"].ToString() == "S"))
+                    {
+                        OrdenProduccion.Warehouse = "FS001";
+                    };
+
+
+ OrdenProduccion.Lines.ItemNo = "HVO-00001";
+                    OrdenProduccion.Lines.BaseQuantity = 1;
+                    if (dr["clasificadora"].ToString() == "A")
+                    {
+                        OrdenProduccion.Lines.Warehouse = "CCHA";
+                    }
+                    else if (dr["clasificadora"].ToString() == "B")
+                    {
+                        OrdenProduccion.Lines.Warehouse = "CCHB";
+                    }
+                    else if (dr["clasificadora"].ToString() == "H")
+                    {
+                        OrdenProduccion.Lines.Warehouse = "CCHH";
+                    }
+                    else if (dr["clasificadora"].ToString() == "O")
+                    {
+                        OrdenProduccion.Lines.Warehouse = "OVO";
+                    }
+                    else if ((dr["clasificadora"].ToString() == "S"))
+                    {
+                        OrdenProduccion.Lines.Warehouse = "FS001";
+                    };
+
+if (dr["clasificadora"].ToString() == "A")
+                    {
+                        ReciboProduccion.Lines.WarehouseCode = "CCHA";
+                    }
+                    else if (dr["clasificadora"].ToString() == "B")
+                    {
+                        ReciboProduccion.Lines.WarehouseCode = "CCHB";
+                    }
+                    else if (dr["clasificadora"].ToString() == "H")
+                    {
+                        ReciboProduccion.Lines.WarehouseCode = "CCHH";
+                    }
+                    else if (dr["clasificadora"].ToString() == "O")
+                    {
+                        ReciboProduccion.Lines.WarehouseCode = "OVO";
+                    }
+                    else if (dr["clasificadora"].ToString() == "S")
+                    {
+                        ReciboProduccion.Lines.WarehouseCode = "FS001";
+                    };
+
+
+if (dr["clasificadora"].ToString() == "A")
+                    {
+                        EmisionProduccion.Lines.WarehouseCode = "CCHA";
+                    }
+                    else if (dr["clasificadora"].ToString() == "B")
+                    {
+                        EmisionProduccion.Lines.WarehouseCode = "CCHB";
+                    }
+                    else if (dr["clasificadora"].ToString() == "H")
+                    {
+                        EmisionProduccion.Lines.WarehouseCode = "CCHH";
+                    }
+                    else if (dr["clasificadora"].ToString() == "O")
+                    {
+                        EmisionProduccion.Lines.WarehouseCode = "OVO";
+                    }
+                    else if (dr["clasificadora"].ToString() == "S")
+                    {
+                        EmisionProduccion.Lines.WarehouseCode = "FS001";
+                    };
